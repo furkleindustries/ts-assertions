@@ -1,11 +1,13 @@
 {
   "name": "ts-assertions",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A tiny library of assertions that can be used to validate data integrity and optionally produce type inferences of the returned value at the same time.",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "src/index.ts",
   "scripts": {
+    "build": "webpack",
     "test": "jest",
-    "prepublishOnly": "npm run test"
+    "prepublishOnly": "npm run test && npm run build"
   },
   "repository": {
     "type": "git",
@@ -21,12 +23,10 @@
     "@types/jest": "^23.3.13",
     "@types/node": "^10.12.18",
     "jest": "^23.6.0",
-    "ts-jest": "^23.10.5"
-  },
-  "peerDependencies": {
-    "typescript": "^3"
-  },
-  "dependencies": {
-    "typescript": "^3.2.4"
+    "ts-jest": "^23.10.5",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.2.4",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
   }
 }
