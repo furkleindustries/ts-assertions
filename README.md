@@ -13,7 +13,7 @@ assert(1 === 2, 'This will throw.');
 
 If you want to assert the validity of a value and have typescript respect the validated type of the , use `assertValid`:
 
-**assertValid<T>(value: any, message?: string | null, validator?: (value: )): T**
+**assertValid&lt;T&gt;(value: any, message?: string | null, validator?: (value: )): T**
 
 ```javascript
 assertValid<number>(1, 'This will not throw.');
