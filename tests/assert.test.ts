@@ -11,10 +11,9 @@ import {
 describe('assert unit tests.', () => {
   it('Throws an AssertionError if the condition is false.', () => {
     expect.assertions(1);
-    // @ts-ignore
-    const func = () => assert();
     try {
-      func();
+      // @ts-ignore
+      assert();
     } catch (err) {
       expect(err).toBeInstanceOf(AssertionError);
     }

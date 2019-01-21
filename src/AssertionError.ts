@@ -1,3 +1,6 @@
 export class AssertionError extends Error {
-  public readonly type = 'AssertionError';
+  constructor(message: any) {
+    super(message);
+    this.name = 'AssertionError';
+  }
 }
