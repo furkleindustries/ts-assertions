@@ -4,7 +4,7 @@
     "outDir": "dist/",
     "rootDir": "src/",
     "moduleResolution": "node",
-    "module": "esnext",
+    "module": "commonjs",
     "declaration": true,
     "sourceMap": true,
     //"inlineSourceMap": true,
