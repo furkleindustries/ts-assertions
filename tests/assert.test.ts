@@ -2,20 +2,13 @@ import {
   assert,
 } from '../src/assert';
 import {
+  AssertionError,
+} from '../src/AssertionError';
+import {
   strings,
 } from '../src/strings';
 
-const assertLib = require('assert');
-const okSpy = jest.spyOn(assertLib, 'ok');
-import {
-  AssertionError,
-} from 'assert';
-
 describe('assert unit tests.', () => {
-  beforeEach(() => {
-    okSpy.mockClear();
-  });
-
   it('Throws an AssertionError if the condition is false.', () => {
     expect.assertions(1);
     // @ts-ignore
@@ -31,28 +24,15 @@ describe('assert unit tests.', () => {
     expect(assert(true)).toBe(true);
   });
 
-  it('Passes the default message to assert.ok if the message argument is not present.', () => {
-    expect.assertions(2);
-    try {
-      assert(null);
-    } catch (err) {
-      expect(okSpy).toBeCalledTimes(1);
-      expect(okSpy).toBeCalledWith(null, strings.DEFAULT_MESSAGE);
-    }
-
-    okSpy.mockClear();
+  it('Throws the default message if the message argument is not present.', () => {
+    const func = () => assert(null);
+    expect(func).toThrow(strings.DEFAULT_MESSAGE);
   });
 
-  it('Passes a custom message to assert.ok if the message argument is present.', () => {
-    expect.assertions(2);
+  it('Throws a custom message if the message argument is present.', () => {
     const msg = 'dfdsfdsk';
-    try {
-      assert(null, msg);
-    } catch (err) {
-      expect(okSpy).toBeCalledTimes(1);
-      expect(okSpy).toBeCalledWith(null, msg);
-    }
+    const func = () => assert(null, msg);
 
-    okSpy.mockClear();
+    expect(func).toThrow(msg);
   });
 });
