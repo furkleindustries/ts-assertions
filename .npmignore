@@ -1,1 +1,8 @@
+coverage/
 tests/
+src/
+
+README.md
+
+/*.config.js
+/*.json
