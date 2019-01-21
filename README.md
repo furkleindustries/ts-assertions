@@ -1,6 +1,6 @@
 # ts-assertions
 
-A tiny library of assertions that can be used to validate data integrity and optionally produce type inferences of the returned value at the same time. Each of these functions throws if its conditions are not met. There is additionally an `IAssertion` interface which can be used externally as a generic type definition for all assertion functions.
+A tiny library of assertions that can be used to validate data integrity and optionally produce type inferences of the returned value at the same time. Each of these functions throws if its conditions are not met. There is additionally an `IAssertion` interface which can be used externally as a generic type definition for all assertion functions, and an `AssertionError` class that can be used to identify any exception coming from this library.
 
 If you want to assert the validity of a condition, use `assert`:
 

@@ -1,13 +1,15 @@
 import {
+  AssertionError,
+} from './AssertionError';
+import {
   strings,
 } from './strings';
-import {
-  ok,
-} from 'assert';
 
 export function assert(condition: any, message?: string | null): true {
   const msg = message || strings.DEFAULT_MESSAGE;
-  ok(condition, msg);
+  if (!condition) {
+    throw new AssertionError(msg);
+  }
 
   return true;
 };
