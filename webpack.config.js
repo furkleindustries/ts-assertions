@@ -10,6 +10,14 @@ module.exports = {
   target: 'node',
   mode,
 
+  output: {
+    filename: 'index.js',
+    path: path.join(__dirname, 'dist', 'node'),
+    libraryTarget: 'commonjs',
+  },
+
+  plugins: [],
+
   module: {
     rules: [
       {
@@ -24,15 +32,6 @@ module.exports = {
     extensions: [
       '.tsx',
       '.ts',
-      '.js',
     ],
   },
-
-  output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'commonjs',
-  },
-
-  plugins: [],
 };
