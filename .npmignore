@@ -2,11 +2,9 @@ coverage/
 tests/
 src/
 
-README.md
-
 /*.config.js
 /*.json
 
-/LICENSE
-/README.md
-/ts-assertions.code-workspace
+ts-assertions.code-workspace
+LICENSE
+README.md
