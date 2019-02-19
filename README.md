@@ -22,8 +22,7 @@ assertValid<string[]>(
   [ 'one', 'two', 'three', ],
   'This will not throw.',
   (value) => (
-    Array.isArray(value) &&
-      value.filter((item) => typeof item === 'string').length === value.length
+    Array.isArray(value) && !value.find((item) => typeof item !== 'string')
   )
 );
 ```

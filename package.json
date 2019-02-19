@@ -2,9 +2,12 @@
   "name": "ts-assertions",
   "version": "2.0.0",
   "description": "A tiny library of assertions that can be used to validate data integrity and optionally produce type inferences of the returned value at the same time.",
+  "browser": "dist/browser.js",
   "main": "dist/index.js",
+  "esnext": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf dist/ && tsc && webpack -p",
     "test": "jest",
     "prepublishOnly": "npm run test && npm run build"
   },
@@ -19,12 +22,15 @@
   "author": "furkle",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "@types/jest": "^23.3.13",
-    "@types/node": "^10.12.18",
+    "@types/jest": "^24.0.6",
+    "@types/node": "^11.9.4",
     "babel-core": "^6.26.3",
-    "babel-preset-jest": "^23.2.0",
-    "jest": "^23.6.0",
-    "ts-jest": "^23.10.5",
-    "typescript": "^3.2.4"
+    "babel-preset-jest": "^24.1.0",
+    "jest": "^24.1.0",
+    "ts-jest": "^24.0.0",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.3",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
   }
 }

@@ -7,12 +7,12 @@ const mode = process.env.NODE_ENV === 'development' ?
 module.exports = {
   entry: './src/index.ts',
   devtool: 'source-map',
-  target: 'node',
+  target: 'web',
   mode,
 
   output: {
-    filename: 'index.js',
-    path: path.join(__dirname, 'dist', 'node'),
+    filename: 'browser.js',
+    path: path.join(__dirname, 'dist'),
     libraryTarget: 'commonjs',
   },
 
