@@ -5,7 +5,7 @@ import {
 export function assertValid<T>(
   value: any,
   message?: string | null,
-  validator?: (value: any) => boolean,
+  validator?: (value: T) => boolean,
 ): T
 {
   const isValid = validator || Boolean;
