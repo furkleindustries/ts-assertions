@@ -4,17 +4,10 @@ const mode = process.env.NODE_ENV === 'development' ?
   'development' :
   'production';
 
-module.exports = {
+const base = {
   entry: './src/index.ts',
   devtool: 'source-map',
-  target: 'web',
   mode,
-
-  output: {
-    filename: 'browser.js',
-    path: path.join(__dirname, 'dist'),
-    libraryTarget: 'commonjs',
-  },
 
   plugins: [],
 
@@ -35,3 +28,28 @@ module.exports = {
     ],
   },
 };
+
+const nodeConfig = {
+  ...base,
+  target: 'node',
+  output: {
+    filename: 'node.js',
+    path: path.join(__dirname, 'dist'),
+    libraryTarget: 'commonjs',
+  },
+};
+
+const webConfig = {
+  ...base,
+  target: 'web',
+  output: {
+    filename: 'node.js',
+    path: path.join(__dirname, 'dist'),
+    libraryTarget: 'commonjs',
+  },
+};
+
+module.exports = [
+  nodeConfig,
+  webConfig,
+];

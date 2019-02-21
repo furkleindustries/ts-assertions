@@ -1,9 +1,9 @@
 {
   "name": "ts-assertions",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A tiny library of assertions that can be used to validate data integrity and optionally produce type inferences of the returned value at the same time.",
   "browser": "dist/browser.js",
-  "main": "dist/browser.js",
+  "main": "dist/node.js",
   "esnext": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
